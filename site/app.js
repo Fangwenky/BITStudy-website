@@ -34,7 +34,7 @@ const screens = {
     copy: '直连北理同学自主创建的开源项目 BITShare。在应用里搜索免费学习资料、浏览目录、查看文件并下载，复习时少找一会儿。',
     note: '资料由 BITShare 社区提供，免费搜索与下载。',
     caption: '搜索公开资源，浏览目录，下载需要的资料。',
-    alt: 'BITShare 实机搜索界面，展示 Python 公开资料目录与排序筛选'
+    alt: 'BITShare 搜索界面，展示 Python 公开资料目录与排序筛选'
   },
   lessons: {
     label: '课程节次与笔记',
