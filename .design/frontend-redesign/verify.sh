@@ -13,6 +13,10 @@ done
 # Keep DOM assertions in one evaluation; avoid CLI scroll/wait races.
 agent-browser --session "$session" eval --stdin <<'JS'
 (async () => {
+  for (const link of document.querySelectorAll('[data-show-feature]')) {
+    link.click();
+    if (document.querySelector('[data-feature][aria-pressed=true]').dataset.feature !== link.dataset.showFeature) throw Error('Benefit preview selection');
+  }
   for (const key of ['schedule', 'ddl', 'yanhe', 'bitshare']) {
     document.querySelector(`[data-feature=${key}]`).click();
     const image = document.getElementById('screenshot-image');

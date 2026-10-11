@@ -39,3 +39,9 @@
 ## 上线检查
 
 已部署至 https://bitstudy.fangwenky.dpdns.org/。线上浏览器同一套检查通过，无 JavaScript 错误；显示 v1.0.5 / 20.7 MB，按钮指向对应版本的服务器 APK。`/download/latest.apk` 返回 200；版本同步 timer 为 active / enabled。成功状态截图另存为 `screenshots/live-homepage-desktop-1280.png` 和 `screenshots/live-download-desktop-1280.png`。
+
+## 产品用途布局调整验证（2026-10-11）
+
+四项用途全部直接展示，桌面/平板两列、手机单列。已查看 benefits-desktop-1280.png、benefits-tablet-768.png、benefits-mobile-375.png，以及 benefits-section-desktop-1280.png、benefits-section-mobile-375.png、benefits-ai-mobile-375.png；图片加载、正文、导航与 AI 内容排布正常。截图检查中先加载可见图片，避免全页截图工具跳过延迟加载图片。
+
+五种宽度无横向溢出，用途入口对应选中界面，原有五张图片和弹窗关闭/焦点恢复检查通过。未增加前端依赖或虚构 AI 截图。

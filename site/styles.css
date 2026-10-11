@@ -82,6 +82,18 @@ h3 { font-size: 24px; line-height: 1.4; letter-spacing: -.03em; }
 .campus-english { font: 9px/1.5 var(--body); color: var(--muted); max-width: 90px; letter-spacing: .01em; }
 .campus-strip p { font-size: 11px; color: var(--muted); }
 .campus-strip-note { display: none; font-size: 10px; color: var(--muted); }
+.benefits-heading { max-width: 640px; margin-bottom: 36px; }
+.benefits-heading .eyebrow { margin-bottom: 12px; }
+.benefits-heading > p:last-child { margin-top: 16px; color: var(--muted); }
+.benefits-grid { display: grid; gap: 32px; }
+.benefit { min-width: 0; border-top: 1px solid var(--line); padding-top: 24px; }
+.benefit-label { display: flex; align-items: center; gap: 12px; color: var(--primary); font-size: 13px; font-weight: 600; }
+.benefit h3 { margin-block: 16px; font-size: clamp(24px, 2.5vw, 30px); }
+.benefit > p { color: var(--muted); max-width: 480px; }
+.benefit ul { padding-left: 20px; margin-block: 16px; font-size: 14px; }
+.benefit li + li { margin-top: 8px; }
+.benefit-actions { display: flex; gap: 24px; flex-wrap: wrap; }
+.benefit .benefit-note { font-size: 12px; margin-top: 24px; }
 .showcase-section { background: var(--surface); border-block: 1px solid var(--line); }
 .section-heading { margin-bottom: 32px; }
 .section-heading .eyebrow { margin-bottom: 12px; }
@@ -171,6 +183,7 @@ details[open] > summary span { transform: rotate(45deg); }
   .screenshot-crop { height: 440px; }
   .preview-bar { padding-bottom: 18px; }
   .hero-preview { padding: 24px; max-width: 560px; width: 100%; margin-inline: auto; }
+  .benefits-grid { grid-template-columns: 1fr 1fr; column-gap: 40px; }
   .preview-bottom { font-size: 12px; padding: 18px 20px; }
   .preview-bottom strong { font-size: 14px; }
   .campus-strip-note { display: block; }
@@ -189,6 +202,7 @@ details[open] > summary span { transform: rotate(45deg); }
 }
 
 @media (min-width: 900px) {
+  .benefits-grid { grid-template-columns: 1fr 1fr; column-gap: 80px; row-gap: 48px; }
   .header { min-height: 88px; }
   .hero { grid-template-columns: 1.12fr 1fr; gap: 56px; padding-block: 40px 64px; }
   .hero h1 { margin-bottom: 28px; }

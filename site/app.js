@@ -28,10 +28,10 @@ const screens = {
     alt: '延河课堂个人课程界面，显示学期选择、搜索和课程列表'
   },
   bitshare: {
-    label: 'BITShare',
-    kicker: '北理同学的共享资料库',
-    title: '同学分享的资料，直接找到。',
-    copy: '直连北理同学自主创建的开源项目 BITShare。在应用里搜索免费学习资料、浏览目录、查看文件并下载，复习时少找一会儿。',
+    label: '资料与 BITShare',
+    kicker: '个人知识库与共享资料库',
+    title: '整理自己的资料，也能免费找资源。',
+    copy: '将课程文件导入个人知识库，按文件夹整理与查看。直连 BITShare，免费搜索、浏览和下载北理同学共享的学习资料。',
     note: '资料由 BITShare 社区提供，免费搜索与下载。',
     caption: '搜索公开资源，浏览目录，下载需要的资料。',
     alt: 'BITShare 搜索界面，展示 Python 公开资料目录与排序筛选'
@@ -62,6 +62,10 @@ document.querySelectorAll('[data-feature]').forEach(button => {
     document.getElementById('screen-image-button').setAttribute('aria-label', `放大查看${screen.label}完整截图`);
     document.getElementById('lesson-preview').hidden = activeFeature !== 'yanhe';
   });
+});
+
+document.querySelectorAll('[data-show-feature]').forEach(link => {
+  link.addEventListener('click', () => document.querySelector(`[data-feature="${link.dataset.showFeature}"]`).click());
 });
 
 function openScreenshot(key, trigger) {
