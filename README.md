@@ -24,7 +24,9 @@ python3 -m unittest discover -s scripts -p 'test_*.py'
 node --check site/app.js
 ```
 
-打开 http://localhost:8080。本地预览没有 `/api/release.json`，会显示版本信息不可用状态；正式服务器提供该接口。课表区为可交互的功能示意，课程与日期均非用户实际数据。
+打开 http://localhost:8080。本地预览没有 `/api/release.json`，会显示版本信息不可用状态；正式服务器提供该接口。
+
+官网围绕北京理工大学（BIT / Beijing Institute of Technology）同学的课表、作业与 DDL、延河课堂、BITShare 展示功能。`site/assets/screenshots/` 中五张图片为 USB 连接的小米 17 Pro Max 上 BITStudy 的原始实机截图（2026-10-11），没有生成或重绘应用内容。截图中的日期、课程、任务和资源列表仅反映截图时的状态，不代表访客的个人数据。
 
 ## 部署到 VPS
 

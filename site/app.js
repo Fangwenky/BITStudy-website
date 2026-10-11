@@ -1,38 +1,4 @@
 'use strict';
-const demoCourses = [
-  [['高等数学', '08:00', '09:35', '∑'], ['大学物理', '10:00', '11:35', 'λ']],
-  [['程序设计', '08:00', '09:35', '{ }'], ['大学英语', '14:00', '15:35', 'Aa']],
-  [['线性代数', '10:00', '11:35', '∑'], ['大学物理', '14:00', '15:35', 'λ']],
-  [['高等数学', '08:00', '09:35', '∑'], ['程序设计', '10:00', '11:35', '{ }']],
-  [['大学英语', '10:00', '11:35', 'Aa'], ['线性代数', '14:00', '15:35', '∑']]
-];
-document.querySelectorAll('[data-day]').forEach(button => button.addEventListener('click', () => {
-  document.querySelectorAll('[data-day]').forEach(day => day.setAttribute('aria-pressed', String(day === button)));
-  const fragment = document.createDocumentFragment();
-  demoCourses[Number(button.dataset.day)].forEach(([name, start, end, symbol], index) => {
-    const card = document.createElement('div');
-    card.className = `course course-${index === 0 ? 'blue' : 'mint'}`;
-    const time = document.createElement('time');
-    time.append(start, document.createElement('br'));
-    const endTime = document.createElement('span');
-    endTime.textContent = end;
-    time.append(endTime);
-    const copy = document.createElement('div');
-    const title = document.createElement('strong');
-    title.textContent = name;
-    const location = document.createElement('p');
-    location.textContent = '良乡校区 · 示例教室';
-    copy.append(title, location);
-    const mark = document.createElement('span');
-    mark.className = 'course-symbol';
-    mark.setAttribute('aria-hidden', 'true');
-    mark.textContent = symbol;
-    card.append(time, copy, mark);
-    fragment.append(card);
-  });
-  document.getElementById('demo-courses').replaceChildren(fragment);
-}));
-
 async function loadRelease() {
   try {
     const response = await fetch('/api/release.json', {cache: 'no-store', signal: AbortSignal.timeout(12000)});
