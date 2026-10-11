@@ -35,3 +35,7 @@
 ## 验证方式
 
 `verify.sh` 使用 agent-browser 检查五种宽度、四项功能、五张图片、弹窗焦点恢复和 Escape。多步骤 CLI 自动滚动存在竞态，因此功能事件断言集中在一次浏览器求值中执行；尺寸和弹窗同时人工查看截图验证。
+
+## 上线检查
+
+已部署至 https://bitstudy.fangwenky.dpdns.org/。线上浏览器同一套检查通过，无 JavaScript 错误；显示 v1.0.5 / 20.7 MB，按钮指向对应版本的服务器 APK。`/download/latest.apk` 返回 200；版本同步 timer 为 active / enabled。成功状态截图另存为 `screenshots/live-homepage-desktop-1280.png` 和 `screenshots/live-download-desktop-1280.png`。
