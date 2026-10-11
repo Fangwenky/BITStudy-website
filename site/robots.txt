@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bitstudy.fangwenky.dpdns.org/sitemap.xml

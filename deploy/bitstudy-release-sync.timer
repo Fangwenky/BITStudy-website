@@ -1,0 +1,11 @@
+[Unit]
+Description=Check for new BITStudy releases every ten minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=10min
+RandomizedDelaySec=30s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

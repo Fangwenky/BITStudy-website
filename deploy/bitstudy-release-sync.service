@@ -1,0 +1,18 @@
+[Unit]
+Description=Mirror the latest stable BITStudy APK release
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=bitstudy
+Group=bitstudy
+ExecStart=/usr/bin/python3 /opt/bitstudy-website/scripts/sync_release.py --root /var/lib/bitstudy
+EnvironmentFile=-/etc/bitstudy.env
+TimeoutStartSec=15min
+UMask=0022
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/bitstudy
