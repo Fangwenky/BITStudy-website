@@ -54,6 +54,20 @@ bash deploy/deploy.sh root@107.175.115.136
 
 `/api/release.json` 提供版本信息，`/download/latest.apk` 始终提供最近一次成功镜像的主 APK；页面按钮使用 `/downloads/<release-id>/<asset-id>-<filename>.apk`，确保展示的版本与下载文件对应。最新链接和元数据设置 `Cache-Control: no-store`，版本文件缓存一天。移除旧版本后其链接可能返回 404，请优先分享官网或最新链接。
 
+### Android 应用更新检查
+
+Android 应用复用 `GET https://bitstudy.fangwenky.dpdns.org/api/release.json`，无需新增接口或部署配置：
+
+| 字段 | 应用用途 |
+| --- | --- |
+| `tag` | 最新正式版本名称，例如 `v1.0.5`；按数字版本比较，与本机的 `1.0.5` 视为同版 |
+| `notes` | 更新弹窗中的发布说明 |
+| `published_at` | ISO 8601 发布时间 |
+
+接口不提供 Android `versionCode`，因此正式版本必须递增版本名称；应用不从 GitHub ID 或 tag 推算版本码，也不启用强制更新。缺失或无效的 `tag` 会被应用视为检查失败。`download_url` 是网页使用的 APK 路径，应用点击「前往官网下载」固定打开 `https://bitstudy.fangwenky.dpdns.org/#download`，由用户在官网选择下载安装包。
+
+继续在 Android 仓库发布带 APK 的正式 GitHub Release 即可；本站 timer 通常约 10 分钟内完成镜像。只有下载和校验成功后才发布新元数据，避免应用提示更新时官网还没有对应安装包。
+
 ## 运维
 
 ```bash
