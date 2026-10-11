@@ -28,6 +28,8 @@ node --check site/app.js
 
 官网围绕北京理工大学（BIT / Beijing Institute of Technology）同学的课表、作业与 DDL、延河课堂、BITShare 展示功能。`site/assets/screenshots/` 中五张图片为 USB 连接的小米 17 Pro Max 上 BITStudy 的原始实机截图（2026-10-11），没有生成或重绘应用内容。截图中的日期、课程、任务和资源列表仅反映截图时的状态，不代表访客的个人数据。
 
+前端采用绿色校园产品风格，支持手机、平板和桌面布局。功能区可切换四类实机界面，点击截图可打开完整原图；弹窗支持滚动、Escape 关闭和焦点恢复。浏览器交互检查可运行 `bash .design/frontend-redesign/verify.sh`（需要已安装 agent-browser）。设计说明与检查记录位于 `.design/frontend-redesign/`。
+
 ## 部署到 VPS
 
 服务器：Ubuntu 24.04，已有 Nginx、Python 3、systemd。域名通过 Cloudflare 代理指向 VPS，源站 TLS 使用服务器现有的 Cloudflare Origin 通配证书（`*.fangwenky.dpdns.org`），公网访问使用 Cloudflare 的 HTTPS 证书。证书私钥不进入仓库。
